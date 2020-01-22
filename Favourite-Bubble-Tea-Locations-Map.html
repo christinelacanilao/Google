@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favourite Bubble Tea Locations in Markham</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <style>
+    #map {
+      height: 100%;
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    </style>
+  </head>
+  
+  <body>
+    <h3>Favourite Bubble Tea Locations in Markham</h3>
+    
+    <div id="map"></div>
+    <script>
+    // Initialize and add the map
+    function initMap() {
+    // The location of Markham
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 14,
+			center: {lat:43.8533806, lng:-79.3358921}
+        });
+      // The map, centered at Markham
+    
+		var image = 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red1.png';
+		var image2 = 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red2.png';
+		
+		var ChatimeMarker = new google.maps.Marker({
+			position: {lat: 43.8666232, lng: -79.3370874},
+			map: map,
+			icon: image
+		});
+		
+		var CocoMarker = new google.maps.Marker({
+			position: {lat: 43.8604463, lng: -79.3072095},
+			map: map,
+			icon: image2
+		});
+	}
+
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtDsjZjZjw817dmts-HlHuiLmZhZqiZPY&callback=initMap">
+    </script>
+  </body>
+</html>
